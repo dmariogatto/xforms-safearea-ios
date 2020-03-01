@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="SafeZone.EffectSafeAreaPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:effects="clr-namespace:SafeZone.Effects"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <yummy:PancakeView effects:SafeAreaInsetEffect.Insets="All">
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStop Offset="0" Color="#618EE3" />
+                <yummy:GradientStop Offset="0.45" Color="#DA96EB" />
+                <yummy:GradientStop Offset="0.85" Color="#79CEE2" />
+            </yummy:PancakeView.BackgroundGradientStops>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label
+                    FontSize="Title"
+                    BackgroundColor="MediumVioletRed"
+                    HorizontalOptions="FillAndExpand"
+                    Text="--- Page Title ---"
+                    VerticalOptions="Start" />
+                <Button
+                    Grid.Row="1"
+                    Clicked="Button_Clicked"
+                    HorizontalOptions="Center"
+                    Text="Back"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Row="2"
+                    FontSize="Title"
+                    BackgroundColor="MediumVioletRed"
+                    HorizontalOptions="FillAndExpand"
+                    Text="--- Page Footer ---" />
+            </Grid>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>
